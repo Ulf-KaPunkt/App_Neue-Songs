@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini-Proben-App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: white;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .logo {
+      width: 140px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.3em;
+    }
+    button {
+      font-size: 1.2rem;
+      margin: 20px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+    #song {
+      margin-top: 30px;
+      font-size: 1.4rem;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <img src="rockreloaded-logo-final.png" alt="Rock Reloaded Logo" class="logo" />
+  <h1>🎸 Mini-Proben-App</h1>
+  <button onclick="pickSong()">🎲 Zufall wählen</button>
+  <div id="song">Drücke auf den Button, um einen Song anzuzeigen 🎶</div>
+
+  <script>
+    const songs = ["Sunday, bloody sunday", "Denkmal", "Friday I‘m in love", "You give love a bad name", "Wonderwall", "When you come around", "Mr. Jones", "Westerland", "Bohemian like you"];
+
+    function pickSong() {
+      const randomSong = songs[Math.floor(Math.random() * songs.length)];
+      document.getElementById("song").innerText = randomSong || "Kein Song gefunden";
+    }
+  </script>
+</body>
+</html>
