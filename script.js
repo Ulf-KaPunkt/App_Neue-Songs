@@ -34,6 +34,8 @@ function drawSong() {
   document.getElementById("output").textContent = selected;
   history.push(selected);
 
-  const view = getFiltered(filter).map(s => "• " + s).join("<br>");
-  document.getElementById("list").innerHTML = view;
+  const showList = getFiltered(filter)
+    .map(s => "• " + s)
+    .join("<br>");
+  document.getElementById("list").innerHTML = showList;
 }
