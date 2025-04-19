@@ -1,13 +1,14 @@
+
 const allSongs = {
-"Sunday Bloody Sunday – U2": "alle"
-"Denkmal – Wir sind Helden": "frau"
-"Friday I’m in Love – The Cure": "mann"
-"You Give Love a Bad Name – Bon Jovi": "frau"
-"Wonderwall – Oasis": "mann"
-"When I Come Around – Green Day": "mann"
-"Mr. Jones – Counting Crows": "frau"
-"Westerland – Die Ärzte": "beide"
-"Bohemian Like You – Dandy Warhols": "mann"
+  "Sunday Bloody Sunday – U2": "alle",
+  "Denkmal – Wir sind Helden": "frau",
+  "Friday I’m in Love – The Cure": "mann",
+  "You Give Love a Bad Name – Bon Jovi": "frau",
+  "Wonderwall – Oasis": "mann",
+  "When I Come Around – Green Day": "mann",
+  "Mr. Jones – Counting Crows": "frau",
+  "Westerland – Die Ärzte": "beide",
+  "Bohemian Like You – Dandy Warhols": "mann"
 };
 let history = [];
 
@@ -31,10 +32,11 @@ function drawSong() {
   }
 
   const selected = remaining[Math.floor(Math.random() * remaining.length)];
-  history.push(selected);
   document.getElementById("output").textContent = selected;
+  history.push(selected);
 
-  // Übersicht aktualisieren
-  const fullList = getFiltered(filter).map(s => "• " + s).join("<br>");
+  const fullList = getFiltered(filter)
+    .map(s => "• " + s)
+    .join("<br>");
   document.getElementById("list").innerHTML = fullList;
 }
