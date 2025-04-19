@@ -1,83 +1,58 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Mini-Proben-App</title>
   <style>
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: black;
-      color: #ffcc33;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      color: gold;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px 20px;
+      padding: 2em;
     }
     .logo {
-      width: 140px;
-      margin-bottom: 15px;
+      width: 120px;
+      display: block;
+      margin: 0 auto 1em;
     }
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.3em;
+    select, button {
+      font-size: 1em;
+      margin: 0.5em;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      border: none;
     }
     button {
-      font-size: 1.2rem;
-      margin: 20px;
-      padding: 10px 20px;
-      border-radius: 10px;
-      border: none;
-      background-color: #ffcc33;
+      background-color: gold;
       color: black;
+      font-weight: bold;
       cursor: pointer;
     }
-    #song {
-      margin-top: 30px;
-      font-size: 1.6rem;
-      font-weight: bold;
+    .output {
+      margin-top: 2em;
+      font-size: 1.5em;
     }
-    #overview {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      max-width: 600px;
-      line-height: 1.6;
-      color: #cccccc;
+    .smalllist {
+      margin-top: 3em;
+      font-size: 0.85em;
     }
   </style>
 </head>
 <body>
-  <img src="rockreloaded-logo-final.png" alt="Rock Reloaded Logo" class="logo" />
+  <img src="rockreloaded-logo-final.png" alt="Logo" class="logo" />
   <h1>🎸 Mini-Proben-App</h1>
-  <button onclick="pickSong()">🎲 Zufall wählen</button>
-  <div id="song">Drücke auf den Button, um einen Song anzuzeigen 🎶</div>
-  <div id="overview"></div>
-
-  <script>
-    const songs = [
-      "Sunday, bloody sunday",
-      "Denkmal",
-      "Friday I‘m in love",
-      "You give love a bad name",
-      "Wonderwall",
-      "When you come around",
-      "Mr. Jones",
-      "Westerland",
-      "Bohemian like you"
-    ];
-
-    function pickSong() {
-      const randomSong = songs[Math.floor(Math.random() * songs.length)];
-      document.getElementById("song").innerText = randomSong || "Kein Song gefunden";
-    }
-
-    document.getElementById("overview").innerHTML = `
-      <strong>Songübersicht:</strong><br>${songs.join(" • ")}
-    `;
-  </script>
+  <label for="filter">Songauswahl:</label>
+  <select id="filter">
+    <option value="alle">Alle Songs</option>
+    <option value="mann">Nur Männersongs</option>
+    <option value="frau">Nur Frauensongs</option>
+  </select>
+  <br />
+  <button onclick="drawSong()">🎲 Zufall wählen</button>
+  <div id="output" class="output">🎵</div>
+  <div id="smalllist" class="smalllist"></div>
+  <script src="script.js"></script>
 </body>
 </html>
