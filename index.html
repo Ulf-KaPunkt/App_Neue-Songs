@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini-Proben-App</title>
+  <style>
+    body {
+      background-color: black;
+      color: gold;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 1em;
+    }
+    img.logo {
+      width: 120px;
+      display: block;
+      margin: 0 auto 1em;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 0.5em;
+    }
+    select, button {
+      font-size: 1.1em;
+      padding: 0.7em 1em;
+      margin: 0.5em;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 2em;
+      font-size: 1.5em;
+      min-height: 2em;
+    }
+    .list {
+      margin-top: 2em;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <img src="rockreloaded-logo-final.png" alt="Logo" class="logo" />
+  <h1>🎸 Mini-Proben-App</h1>
+  <div>
+    <label for="filter">Songauswahl:</label>
+    <select id="filter">
+      <option value="alle">Alle Songs</option>
+      <option value="mann">Nur Männersongs</option>
+      <option value="frau">Nur Frauensongs</option>
+    </select>
+  </div>
+  <button onclick="drawSong()">🎲 Zufall wählen</button>
+  <div id="output" class="output">🎵</div>
+  <div id="list" class="list"></div>
+  <script src="script.js"></script>
+</body>
+</html>
