@@ -36,7 +36,7 @@ function drawSong() {
   history.push(selected);
 
   const fullList = getFiltered(filter)
-    .map(s => "• " + s)
+    .map(s => "<span style='color:white; font-size:0.9em; font-weight:normal;'>• " + s + "</span>")
     .join("<br>");
   document.getElementById("list").innerHTML = fullList;
 }
