@@ -25,17 +25,16 @@ function drawSong() {
   const remaining = pool.filter(song => !history.includes(song));
 
   if (remaining.length === 0) {
-    history = [];
     alert("Alle Songs wurden gespielt. Die Liste wird zurückgesetzt.");
+    history = [];
     return;
   }
 
   const selected = remaining[Math.floor(Math.random() * remaining.length)];
-  document.getElementById("output").textContent = selected;
   history.push(selected);
+  document.getElementById("output").textContent = selected;
 
-  const showList = getFiltered(filter)
-    .map(s => "• " + s)
-    .join("<br>");
-  document.getElementById("list").innerHTML = showList;
+  // Übersicht aktualisieren
+  const fullList = getFiltered(filter).map(s => "• " + s).join("<br>");
+  document.getElementById("list").innerHTML = fullList;
 }
